@@ -22,7 +22,7 @@ const Carousels = () => {
                 // console.log(result.message);
                 if (result.success) {
                     setdata(result.message)
-                    setLoading(true)
+                    setLoading(false)
                 }
             })
             .catch(error => console.log('error', error));
@@ -53,7 +53,7 @@ const Carousels = () => {
         )
     } else {
         body = (
-            <Skeleton variant="rounded" width={'100%'} height={300} />
+            <Skeleton variant="rectangular" width={'100%'} height={300} />
         )
     }
 
