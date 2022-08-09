@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import AnimatedNumber from "animated-number-react";
 import { apiUrl } from '../../contexts/constants'
+import Skeleton from '@mui/material/Skeleton';
 
 const LiteNumber = () => {
-
+    const [Loading, setLoading] = useState(true)
     const [data, setdata] = useState([])
 
     useEffect(() => {
@@ -17,6 +18,7 @@ const LiteNumber = () => {
             .then(result => {
                 if (result.success) {
                     setdata(result.message)
+                    setLoading(false)
                 }
             })
             .catch(error => console.log('error', error));
@@ -39,11 +41,20 @@ const LiteNumber = () => {
         </div>
     ))
 
-    return (
-        <div className='LiteNumber'>
-            {list}
-        </div>
-    )
+    let body
+    if (Loading === false) {
+        body = (
+            <div className='LiteNumber'>
+                {list}
+            </div>
+        )
+    } else {
+        body = (
+            <Skeleton variant="rectangular" width={'100%'} height={200} />
+        )
+    }
+
+    return (body)
 }
 
 export default LiteNumber
