@@ -13,9 +13,9 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Quy trình</Nav.Link>
-                            <Nav.Link href="#pricing">Giải đáp</Nav.Link>
-                            <Nav.Link href="#pricing">Liên hệ</Nav.Link>
+                            <Nav.Link href="#QT" data-after="QT">Quy trình</Nav.Link>
+                            <Nav.Link href="#GD" data-after="GD">Giải đáp</Nav.Link>
+                            <Nav.Link href="#LH" data-after="LH">Liên hệ</Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
